@@ -1,5 +1,19 @@
 # scope: golang
 
+snippet pa
+	package ${0:NAME}
+
+snippet imp
+	import (
+		${0}
+	)
+
+snippet fu
+	// ${3:name} ${4:description}
+	func ${1:NAME}(${2:PARAM}) {
+		${0:CONTENT}
+	}
+
 snippet ap
 	${1:slice} = append(${1:slice}, ${2:value})
 
@@ -32,6 +46,13 @@ snippet if
 		${2:/* code */}
 	}
 
+snippet ife
+	if ${1:/* condition */} {
+		${2:/* code */}
+	} else {
+		${3:/* code */}
+	}
+
 snippet fo
 	for ${2:i} = 0; $2 < ${1:count}; $2${3:++} {
 		${4:/* code */}
@@ -48,6 +69,11 @@ snippet cn
 
 snippet mapT
 	map[${1:T}]${2:T}{${0}}
+
+snippet er
+	if err != nil {
+		log.Fatalln(err.Error())
+	}
 
 snippet err
 	if err != nil {
@@ -94,6 +120,9 @@ snippet pr
 
 snippet sp
 	fmt.Sprintf("${1:%s}", ${2:var})${3}
+
+snippet lo
+	log.Println("${1:content}")
 
 snippet sl
 	select {
